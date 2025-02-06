@@ -20,16 +20,16 @@ export async function validatePassword({
 }: {
     email: string;
     password: string;
-}) {
+}): Promise<UserDocument | false> {
     const user = await UserModel.findOne({ email });
 
-    if (!user) {{
-        return false;
-    }};
+    if (!user) {
+        return false; 
+    }
 
     const isValid = await user.comparePassword(password);
 
-    if (!isValid) return false;
+    if (!isValid) return false; 
 
-    return omit(user.toJSON(), 'password');
+    return user;
 }
