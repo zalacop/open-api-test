@@ -15,21 +15,23 @@ export async function CreateUser(
     }
 }
 
+
 export async function validatePassword({
-    email, password
-}: {
+    email,
+    password,
+  }: {
     email: string;
     password: string;
-}): Promise<UserDocument | false> {
+  }) {
     const user = await UserModel.findOne({ email });
-
+  
     if (!user) {
-        return false; 
+      return false;
     }
-
+  
     const isValid = await user.comparePassword(password);
-
-    if (!isValid) return false; 
-
-    return user;
-}
+  
+    if (!isValid) return false;
+  
+    return omit(user, "password");
+  }

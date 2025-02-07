@@ -1,7 +1,6 @@
 import { Request, Response } from "express";
 import { validatePassword } from "../service/user.service";
 import { createSession } from "../service/session.service";
-import { omit } from "lodash";
 
 export async function createUserSessionHandler(req: Request, res: Response) {
    
@@ -13,11 +12,7 @@ export async function createUserSessionHandler(req: Request, res: Response) {
     }
 
     // create a session
-    // omit the password field
-    const userWithoutPassword = omit(user.toJSON(), 'password');
-
-    // now you can safely access _id
-    const session = await createSession(userWithoutPassword._id, req.get("user-agent") || "");
+    const session = await createSession(user._id, req.get("user-agent") || "");
 
      // create an access token
 

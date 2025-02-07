@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 import bcrypt from "bcrypt";
 import config from "config";
 
-export interface UserDocument extends mongoose.Document {
+export interface UserDocument extends mongoose.Document<string> {
     email: string;
     name: string;
     password: string;
