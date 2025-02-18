@@ -1,4 +1,4 @@
-import { InferSchemaType } from "mongoose";
+import { FilterQuery, InferSchemaType } from "mongoose";
 import UserModel, { UserDocument } from "../models/user.models";
 import { omit } from "lodash";
 
@@ -34,4 +34,8 @@ export async function validatePassword({
     if (!isValid) return false;
   
     return omit(user, "password");
+  }
+
+  export async function findUser(query: FilterQuery<UserDocument>) {
+    return UserModel.findOne(query).lean();
   }
