@@ -15,3 +15,11 @@ export async function findProduct(
     return ProductModel.findOne(query, {}, options);
 }
 
+export async function findAndUpdateProduct(
+    query: FilterQuery<ProductDocument>,
+    update: UpdateQuery<ProductDocument>,
+    options: QueryOptions
+) {
+    return ProductModel.findOneAndUpdate(query, update, options);
+}
+
