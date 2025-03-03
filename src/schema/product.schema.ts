@@ -17,3 +17,11 @@ const payload = {
         })
     })
 }
+
+const params = {
+    params: object({
+        productId: string({
+            required_error: "productId is required"
+        })
+    })
+}
