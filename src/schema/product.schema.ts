@@ -1,4 +1,3 @@
-import { describe } from "node:test";
 import { number, object, string } from "zod";
 
 const payload = {
