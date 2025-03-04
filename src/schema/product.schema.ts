@@ -37,3 +37,7 @@ export const updateProductSchema = object({
 export const deleteProductSchema = object({
     ...params
 })
+
+export const getProductSchema = object({
+    ...params
+})
