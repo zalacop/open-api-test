@@ -24,3 +24,7 @@ const params = {
         })
     })
 }
+
+export const createProductSchema = object({
+    ...payload
+})
