@@ -33,3 +33,7 @@ export const updateProductSchema = object({
     ...payload,
     ...params
 })
+
+export const deleteProductSchema = object({
+    ...params
+})
