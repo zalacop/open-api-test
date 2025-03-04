@@ -28,3 +28,8 @@ const params = {
 export const createProductSchema = object({
     ...payload
 })
+
+export const updateProductSchema = object({
+    ...payload,
+    ...params
+})
