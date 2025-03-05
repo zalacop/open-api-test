@@ -1,6 +1,9 @@
 import { Request, Response } from "express";
+import { createProductInput } from "../schema/product.schema";
 
-export async function createProductHandler(req: Request, res: Response) {
+export async function createProductHandler(
+    req: Request<{}, {}, createProductInput["body"]>, 
+    res: Response) {
 
 }
 
