@@ -19,6 +19,8 @@ export async function getProductHandler(
     
 }
 
-export async function deleteProductHandler(req: Request, res: Response) {
+export async function deleteProductHandler(
+    req: Request<updateProductInput["params"]>, 
+    res: Response) {
     
 }
