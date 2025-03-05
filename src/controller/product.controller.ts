@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { createProductInput } from "../schema/product.schema";
+import { createProductInput, updateProductInput } from "../schema/product.schema";
 
 export async function createProductHandler(
     req: Request<{}, {}, createProductInput["body"]>, 
@@ -7,7 +7,8 @@ export async function createProductHandler(
 
 }
 
-export async function updateProductHandler(req: Request, res: Response) {
+export async function updateProductHandler(
+    req: Request<updateProductInput["params"]>, res: Response) {
     
 }
 
