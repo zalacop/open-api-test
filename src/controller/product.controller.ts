@@ -8,11 +8,14 @@ export async function createProductHandler(
 }
 
 export async function updateProductHandler(
-    req: Request<updateProductInput["params"]>, res: Response) {
+    req: Request<updateProductInput["params"]>, 
+    res: Response) {
     
 }
 
-export async function getProductHandler(req: Request, res: Response) {
+export async function getProductHandler(
+    req: Request<updateProductInput["params"]>,
+    res: Response) {
     
 }
 
