@@ -17,12 +17,6 @@ export async function createProductHandler(
 export async function updateProductHandler(
     req: Request<updateProductInput["params"]>, 
     res: Response) {
-    
-}
-
-export async function getProductHandler(
-    req: Request<updateProductInput["params"]>,
-    res: Response) {
         const userId = res.locals.user._id;
 
         const productId = req.params.productId;
@@ -41,6 +35,12 @@ export async function getProductHandler(
         const updatedProduct = await findAndUpdateProduct({ productId }, update, {new: true,});
 
         return res.send(updatedProduct);
+}
+
+export async function getProductHandler(
+    req: Request<updateProductInput["params"]>,
+    res: Response) {
+   
 }
 
 export async function deleteProductHandler(
