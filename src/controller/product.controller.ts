@@ -40,7 +40,15 @@ export async function updateProductHandler(
 export async function getProductHandler(
     req: Request<updateProductInput["params"]>,
     res: Response) {
-   
+        const productId = req.params.productId;
+
+        const product = await findProduct( { productId });
+
+        if(!product) {
+            return res.sendStatus(404);
+        }
+
+        return res.send(product);
 }
 
 export async function deleteProductHandler(
