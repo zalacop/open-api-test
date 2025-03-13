@@ -23,9 +23,9 @@ function routes(app: Express) {
 
     app.put('/api/products', [requireUser, validate(updateProductSchema)], updateProductHandler);
 
-    app.get('/api/products', validate(getProductSchema), getProductHandler);
+    app.get('/api/products/:productId', validate(getProductSchema), getProductHandler);
 
-    app.delete('/api/products', [requireUser, validate(deleteProductSchema)], deleteProductHandler);
+    app.delete('/api/products/:productId', [requireUser, validate(deleteProductSchema)], deleteProductHandler);
 }
 
 export default routes;
