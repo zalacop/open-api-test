@@ -21,7 +21,7 @@ function routes(app: Express) {
 
     app.post('/api/products', [requireUser, validate(createProductSchema)], createProductHandler);
 
-    app.put('/api/products', [requireUser, validate(updateProductSchema)], updateProductHandler);
+    app.put('/api/products/:productId', [requireUser, validate(updateProductSchema)], updateProductHandler);
 
     app.get('/api/products/:productId', validate(getProductSchema), getProductHandler);
 
